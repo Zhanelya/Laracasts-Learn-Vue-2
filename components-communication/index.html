@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
+    
+    <style>
+        body { padding-top: 40px; }
+    </style>
+</head>
+<body>
+    <div id="root" class="container">
+        
+       
+        <parent>
+              <coupon @applied="onCouponApplied" @rejected="onCouponRejected"></coupon>
+        </parent>
+       
+        <div>
+               <strong v-if="couponApplied">Root</strong>
+               <div>{{message}}</div>
+               <div v-show="couponApplied">Oh hello there v-show</div> <!--always compiles and renders, simply adds display:none - slower load, faster toggling-->
+               <div v-if="couponApplied">Oh hello there v-if</div> <!--lazy load, slower toggling, faster load as it won't even load if false-->
+        </div> 
+        
+        <sibling>
+              <strong>Sibling</strong>
+              <p>Hello I'm the Listener</p>
+        </sibling>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

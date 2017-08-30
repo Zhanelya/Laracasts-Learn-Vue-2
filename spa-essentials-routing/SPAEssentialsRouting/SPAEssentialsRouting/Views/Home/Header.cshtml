@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+<section class="hero is-primary is-medium">
+    <!-- Hero header: will stick at the top -->
+    <div class="hero-head">
+        <header class="nav">
+            <div class="nav-right nav-menu">
+                <ul>
+                    <router-link class="nav-item" tag="li" to="/test" exact>
+                        <a class="button is-primary is-inverted">
+                            <span>Test</span>
+                        </a>
+                    </router-link>
+                </ul>
+            </div>
+        </header>
+    </div>
+    
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h2 class="subtitle">
+                SPA Essentials: Routing
+            </h2>
+        </div>
+    </div>
+
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot">
+        @Html.Partial("Nav.cshtml")
+    </div>
+</section>

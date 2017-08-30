@@ -1,0 +1,27 @@
+{
+  "name": "ajax-requests-with-axios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gist.github.com/f844ca4dd1887d566759849665068162.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gist.github.com/f844ca4dd1887d566759849665068162"
+  },
+  "homepage": "https://gist.github.com/f844ca4dd1887d566759849665068162",
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "laravel-mix": "^1.4.2",
+    "vue": "^2.4.2",
+    "vue-router": "^2.7.0",
+    "webpack": "^3.5.5"
+  }
+}

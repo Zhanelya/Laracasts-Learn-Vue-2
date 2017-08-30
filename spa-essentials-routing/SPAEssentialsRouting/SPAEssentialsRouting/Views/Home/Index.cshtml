@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.0/css/bulma.min.css">
+
+    <title>SPA Essentials: Routing</title>
+</head>
+<body>
+<div id="app">
+    @Html.Partial("Header.cshtml")
+
+    <section class="section">
+        <div class="container">
+            <router-view></router-view>
+        </div>
+    </section>
+</div>
+    
+<script src="~/js/manifest.js" asp-append-version="true"></script>
+<script src="~/js/vendor.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
