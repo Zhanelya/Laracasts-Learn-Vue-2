@@ -1,12 +1,19 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Home Page</div>
+            <div class="columns">
+                <div class="column">
+                    <div class="message" v-for="post in posts">
+                        <div class="message-header">
+                            <p>
+                                {{post.user.name}} said...
+                            </p>
+                            <p>
+                                {{post.date}}
+                            </p>
+                        </div>
 
-                    <div class="panel-body">
-                        I'm an example component!
+                        <div class="message-body" v-text="post.body"></div>
                     </div>
                 </div>
             </div>
@@ -16,8 +23,14 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        data() {
+            return {
+                posts: []
+            }
+        },
+        created() {
+            axios.get('Home/Statuses')
+                .then(({data}) => this.posts = data);
         }
     }
 </script>

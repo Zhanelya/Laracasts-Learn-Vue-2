@@ -2764,10 +2764,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
+    data: function data() {
+        return {
+            posts: []
+        };
+    },
+    created: function created() {
+        var _this = this;
+
+        axios.get('Home/Statuses').then(function (_ref) {
+            var data = _ref.data;
+            return _this.posts = data;
+        });
     }
 });
 
@@ -2776,22 +2793,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
+    staticClass: "columns"
   }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Home Page")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
+    staticClass: "column"
+  }, _vm._l((_vm.posts), function(post) {
+    return _c('div', {
+      staticClass: "message"
+    }, [_c('div', {
+      staticClass: "message-header"
+    }, [_c('p', [_vm._v("\n                            " + _vm._s(post.user.name) + " said...\n                        ")]), _vm._v(" "), _c('p', [_vm._v("\n                            " + _vm._s(post.date) + "\n                        ")])]), _vm._v(" "), _c('div', {
+      staticClass: "message-body",
+      domProps: {
+        "textContent": _vm._s(post.body)
+      }
+    })])
+  }))])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
